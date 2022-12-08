@@ -27,7 +27,7 @@ app.post('/message', async (req, res) => {
   const { name, phone, date, message } = req.body
   const tgMessage = dedent`Nombre: ${name}
                     Móvil: ${phone}
-                    Fecha: ${date}
+                    Fecha: ${new Date(date).toLocaleDateString('ES')}
 
                     ${message}
   `
